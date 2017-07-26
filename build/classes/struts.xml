@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.devMode" value="true" />
+
+    <package name="default" namespace="/" extends="json-default">
+    	<action name="product" class="com.chinasoft.app.action.ProductAction">
+    	<result type="json" name="success"> 
+             	<!--      此处将reslut
+				的值返回给客户端root的值对应要返回的值的属性
+				result (注意root为固定写法否则不会把result的值返回给客户端,result由action中
+				返回)
+				<param name="root">result</param> -->	
+				 
+                
+        </result>  
+    	</action>
+    </package>
+	<package name="login" namespace="/" extends="struts-default">
+		<action name="login" class="com.chinasoft.app.action.LoginAction">
+			<result name="success">index.jsp</result>
+		</action>
+	</package>
+
+</struts>
